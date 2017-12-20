@@ -1,13 +1,14 @@
 {% extends 'blog/base.html'%}
 
 {% block content %}
-    {% for post in pt %}
+    {% for poste in pt %}
+
         <div class="post">
             <div class="date">
-                <p>published: {{post.published_date}}</p>
+                <p>published: {{poste.published_date}}</p>
             </div>
-            <h1><a href="{% url 'post_detail' pk=post.pk%}">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaksbr }}</p>
+            <h1><a href="{% url 'post_detail' pk=poste.pk%}">{{ poste.title }}</a></h1>
+            <p>{{ poste.text|linebreaksbr }}</p>
         </div>
     {% endfor %}
 {% endblock %}}
